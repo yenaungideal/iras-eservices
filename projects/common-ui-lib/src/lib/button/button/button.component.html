@@ -1,0 +1,26 @@
+<div
+  class="button iras-button__container"
+  [ngClass]="getContainerClassList()"
+  fxLayout="row"
+  fxLayoutAlign="center center"
+  fxFlex="100"
+>
+  <button
+    #button
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    [type]="buttonType"
+    class="iras-button"
+    [disabled]="disabled"
+    [ngClass]="_btnClass"
+    (click)="onButtonClick($event)"
+  >
+    <div class="iras-button__spinner" [ngClass]="{ 'iras-button__hide-content': !showSpinner }">
+      <span class="spinner-border"></span>
+    </div>
+
+    <div [ngClass]="{ 'iras-button__hide-content': showSpinner }">
+      <span>{{ buttonText }}</span>
+    </div>
+  </button>
+</div>

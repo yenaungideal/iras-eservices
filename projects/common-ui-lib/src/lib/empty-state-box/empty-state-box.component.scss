@@ -1,0 +1,27 @@
+@import "../../assets/styles/utilities/iras.globals";
+@import "../../assets/styles/base";
+.empty-state-box-container {
+  padding: 20px;
+}
+.grey-exclamation-image {
+  content: url("/assets/icons/no-records.png");
+  width: 123px;
+  height: 120px;
+  vertical-align: middle;
+}
+
+.empty-state-header {
+  font-size: 28px;
+  font-weight: $font-weight-light;
+  color: black;
+  margin-bottom: 0;
+  word-break: break-word;
+}
+
+.empty-state-description {
+  font-size: $size-16;
+  font-weight: $font-weight-regular;
+  text-decoration-color: black;
+  white-space: pre-line;
+  word-break: break-word;
+}

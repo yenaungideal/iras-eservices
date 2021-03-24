@@ -1,0 +1,92 @@
+<h2>Cards</h2>
+<div fxLayout="column">
+  <div fxFlex="100">
+    <div fxFlex="100" fxLayout="column" fxLayoutGap="20px" class="card-item-1">
+      <div class="ui-test__card-title">
+        Lessor/Landlord Details
+      </div>
+      <iras-card-container aria-label="Card Container" class="card-item-1" [templateContentRef]="templateContentRef">
+        <ng-template #templateContentRef>
+          <div>
+            <div>
+              Ella Wong
+            </div>
+            <div>
+              Singapore Citizen
+            </div>
+            <div>
+              NRIC
+            </div>
+            <div>
+              S1234567A
+            </div>
+          </div>
+        </ng-template>
+      </iras-card-container>
+    </div>
+  </div>
+  <div fxFlex="100">
+    <div class="card-item-2" fxFlex="100" fxLayout="column" fxLayoutGap="20px">
+      <div class="card-item-1__title">
+        Lessor/Landlord Details
+      </div>
+      <iras-card-container
+        aria-label="Card Container"
+        class="card-item-2"
+        [ngClass]="!cardItem2Valid ? 'card-item-2--invalid' : ''"
+        [templateContentRef]="templateContentRef"
+      >
+        <ng-template #templateContentRef>
+          <div>
+            <div>
+              Ella Wong
+            </div>
+            <div>
+              Singapore Citizen
+            </div>
+            <div>
+              NRIC
+            </div>
+            <div>
+              S1234567A
+            </div>
+          </div>
+        </ng-template>
+      </iras-card-container>
+      <iras-custom-button
+        aria-label="Toggle Card 2 Validity"
+        class="card-item-2__button-submit"
+        fill="solid"
+        color="primary"
+        shape="default"
+        buttonText="Toggle Card 2 Validity"
+        (buttonClicked)="toggleCardValidity()"
+      ></iras-custom-button>
+    </div>
+  </div>
+</div>
+
+<h2>Card Demo - Customize Card Height and Width</h2>
+<div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start stretch">
+  <div>
+    <iras-card-container aria-label="Card Container 1" class="card1" [templateContentRef]="templateContentRef1">
+      <ng-template #templateContentRef1>
+        <div>Card 1</div>
+      </ng-template>
+    </iras-card-container>
+  </div>
+  <div>
+    <iras-card-container aria-label="Card Container 2" class="card2" [templateContentRef]="templateContentRef2">
+      <ng-template #templateContentRef2>
+        <div></div>
+      </ng-template>
+    </iras-card-container>
+  </div>
+  <div>
+    <iras-card-container aria-label="Card Container 3" class="card3" [templateContentRef]="templateContentRef3">
+      <ng-template #templateContentRef3>
+        <div></div>
+      </ng-template>
+    </iras-card-container>
+  </div>
+</div>

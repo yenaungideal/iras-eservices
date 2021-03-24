@@ -1,0 +1,26 @@
+.card-item-1__title {
+  font-weight: 1000;
+}
+
+iras-card-container.card-item-1 {
+  --padding: 20px;
+  --background: var(--color-golden-fizz);
+}
+
+iras-card-container.card-item-2 {
+  --padding: 20px 15px;
+  --border-left: 8px solid var(--primary);
+}
+
+iras-card-container.card-item-2--invalid {
+  --border-left: 8px solid var(--grey-tint);
+}
+
+.card-item-2__title {
+  font-weight: 1000;
+}
+
+iras-card-container.card2 {
+  --card-width: 200px;
+  --card-height: 10px;
+}

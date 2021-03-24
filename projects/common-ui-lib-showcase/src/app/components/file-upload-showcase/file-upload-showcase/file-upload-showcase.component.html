@@ -1,0 +1,8 @@
+<h1>File Upload Component</h1>
+<div fxLayout="column" fxFlex="60">
+  <iras-file-upload
+    aria-label="File Upload"
+    [maxNoFiles]="maxNoFiles"
+    (fileUploaded)="handleFiles($event)"
+  ></iras-file-upload>
+</div>

@@ -1,0 +1,78 @@
+<div fxHide.xs fxLayout="row">
+  <ng-container *ngFor="let head of headings; let i = index">
+    <div fxFlex="calc(100% / {{ headings.length }})" fxLayout="row" class="progress">
+      <div
+        fxFlex="100%"
+        fxLayout="column"
+        id="{{ i }}"
+        [ngClass]="{
+          progress__indicator__completed: activeIndex > i || activeIndex + 1 === headings.length,
+          progress__indicator__active: i == activeIndex && activeIndex + 1 !== headings.length
+        }"
+      >
+        <div fxLayout="row">
+          <div
+            *ngIf="i !== 0"
+            fxFlex="calc(50% - 10px)"
+            class="progress__indicator__stack"
+            fxLayout="row"
+            [ngClass]="{
+              progress__indicator__stack__completed: activeIndex === i
+            }"
+          >
+            <div fxFlex><hr class="stack__line" /></div>
+          </div>
+          <div fxFlex="20px" class="progress__indicator__steps"></div>
+          <div
+            *ngIf="i < headings.length - 1"
+            fxFlex="calc(50% - 10px)"
+            class="progress__indicator__stack"
+            fxLayout="row"
+          >
+            <div fxFlex><hr class="stack__line" /></div>
+          </div>
+        </div>
+        <div fxFlex="100%" class="progress__indicator__title">{{ head }}</div>
+      </div>
+    </div>
+  </ng-container>
+</div>
+
+<div class="container_rwd" *ngIf="headings.length > 0" fxHide.gt-xs>
+  <div
+    fxFlex="100%"
+    fxLayout="column"
+    id="{{ activeIndex }}"
+    [ngClass]="{
+      progress__indicator__completed: activeIndex === headings.length - 1,
+      progress__indicator__active: activeIndex < headings.length
+    }"
+  >
+    <div fxLayout="row" fxLayoutGap="5px">
+      <div fxFlex="20px" class="progress__indicator__steps"></div>
+      <div fxFlex class="progress__indicator__stack" fxLayout="row">
+        <div fxFlex><hr class="stack__line" /></div>
+      </div>
+      <div class="info_icon">
+        <div fxLayout="row" fxLayoutGap="5px" class="iras-tooltip-label">
+          <span>
+            Step {{ activeIndex >= headings.length ? headings.length : [activeIndex + 1] }} of
+            {{ headings.length }}</span
+          ><span id="stepper-icon" class="iras-rwd-stepper-icon" alt="icon" (click)="showModal()"></span>
+        </div>
+      </div>
+    </div>
+    <div fxFlex="100%" class="progress__indicator__title">{{ headings[activeIndex] }}</div>
+  </div>
+</div>
+<ng-template #modalContentRef>
+  <div fxLayout="column" class="modal-content stepper-modal-content" fxLayoutAlign="center center">
+    <div class="iras-tooltip__icon-info">
+      <div fxFlex="calc(100% - 20px)"></div>
+      <span fxFlex="20px" class="iras-rwd-stepper-close-icon" alt="icon" (click)="hideModal()"></span>
+    </div>
+
+    <dialog-stepper fxFlex [headings]="headings" [activeIndex]="activeIndex" (dialogClose)="hideModal()">
+    </dialog-stepper>
+  </div>
+</ng-template>

@@ -1,0 +1,29 @@
+@import "../../assets/styles/utilities/iras.globals";
+@import "../../assets/styles/base";
+:host {
+  --padding: 20px;
+  --border-radius: 5px;
+  --border: 1px solid var(--color-extra-grey);
+  --border-left: 1px solid var(--color-extra-grey);
+  --background: var(--color-extra-grey);
+  --box-shadow: none;
+  --hover-border-color: var(--color-extra-grey);
+  --card-height: 100%;
+  --card-width: 100%;
+  --box-sizing: border-box;
+}
+
+.iras-highlight-panel {
+  padding: var(--padding);
+  background: var(--background);
+  width: var(--card-width);
+  box-sizing: var(--box-sizing);
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: auto;
+  &:hover {
+    box-shadow: var(--box-shadow);
+    border-color: var(--hover-border-color);
+  }
+}

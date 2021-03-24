@@ -1,0 +1,33 @@
+<div fxLayout="column" fxLayoutGap="20px">
+  <h2 class="heading">Spinners</h2>
+  <iras-spinner
+    aria-label="IRAS Spinner"
+    class="iras-spinner"
+    mode="indeterminate"
+    diameter="30"
+    strokeWidth="4"
+  ></iras-spinner>
+  <div fxLayout="row" fxFlex="20">
+    <iras-custom-button
+      aria-label="Open Full Screen Modal Spinner"
+      class="home__button-with-custom-padding"
+      buttonText="Open Full Screen Modal Spinner"
+      fill="outline"
+      shape="round"
+      color="primary"
+      (click)="openModal()"
+    ></iras-custom-button>
+  </div>
+</div>
+<ng-template #spinnerRef>
+  <div fxFlex="100" class="spinner-container" fxLayout="column" fxLayoutAlign="center center">
+    <iras-spinner
+      aria-label="Spinner"
+      class="spinner-container__spinner"
+      mode="indeterminate"
+      diameter="50"
+      strokeWidth="6"
+    ></iras-spinner>
+    <span class="spinner-container__text">Auto-Saving Draft...</span>
+  </div>
+</ng-template>

@@ -1,0 +1,37 @@
+<div #monthPickerContainerElementRef class="iras-monthpicker" fxFlex="100" fxLayout="row wrap">
+  <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+    <iras-masked-input
+      [disabled]="disabled"
+      class="iras-monthpicker__masked-input"
+      fxFlex="100"
+      [mask]="dateMask"
+      maskPlaceholder=" "
+      [(ngModel)]="maskedInputValue"
+      [placeholder]="placeholder"
+      [hasError]="hasError"
+      (focusout)="onTouch()"
+      (keydown)="onMonthPickerKeyDown($event)"
+      (ngModelChange)="onMaskedInputValueChange()"
+      (keyup.backspace)="onBackspacePressed($event)"
+    >
+    </iras-masked-input>
+    <span class="iras-monthpicker__icon" (click)="open()"></span>
+  </div>
+  <div class="iras-monthpicker__fake-input-container">
+    <input
+      class="iras-monthpicker__input"
+      [matDatepicker]="datePicker"
+      [required]="required"
+      [(ngModel)]="value"
+      [value]="selectedDate"
+    />
+    <mat-datepicker
+      #datePicker
+      [startView]="startView"
+      [startAt]="initialHighlightAt"
+      (monthSelected)="onMonthSelected($event)"
+      (closed)="onDatePickerClose()"
+      (opened)="onDatePickerOpen()"
+    ></mat-datepicker>
+  </div>
+</div>

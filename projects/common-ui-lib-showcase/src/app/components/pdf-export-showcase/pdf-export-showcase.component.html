@@ -1,0 +1,119 @@
+<div fxLayout="column">
+  <h2>PDF Export Example</h2>
+  <div fxFlex="100">
+    <div fxLayout="row" fxLayoutAlign="end center" (click)="exportPdf()">
+      <img alt="icon image" class="print-icon" src="./../../../assets/icons/print.svg" />
+      <span class="print-icon-text">Print</span>
+    </div>
+  </div>
+  <kendo-pdf-export fxLayout="column" fxFlex="100" #pdf paperSize="A4" margin="2cm" [scale]="scale">
+    <div class="card" fxLayout="column" fxLayoutGap="20px" #pdfContent id="pdfContent">
+      <div fxFlex="100">
+        <iras-title-header aria-label="Title Header" [title]="'Acknowledgement'"></iras-title-header>
+      </div>
+
+      <div fxFlex="100">
+        <iras-card-container
+          aria-label="Card Container"
+          class="card-container"
+          [templateContentRef]="templateContentRef"
+        >
+          <ng-template #templateContentRef>
+            <div>
+              <h3 class="card-container__text--bold">Submission Successful</h3>
+              <p>Please retain for future reference and retrieval of Stamp Certificate.</p>
+              <p>
+                Note that a copy of this acknowledgement can be found in Notices/ Letters for each liable individuals
+                and the applicant.
+              </p>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="20px">
+              <div fxFlex="0 1 calc(50% - 20px)">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <span class="card-container__text--bold" fxFlex="40">Version No.</span>
+                  <span fxFlex="40">1.0.0</span>
+                </div>
+              </div>
+              <div fxFlex="0 1 calc(50% - 20px)">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <span class="card-container__text--bold" fxFlex="40">Date/ Time</span>
+                  <span fxFlex="40">2020 Sep 11 10:00:20 SGT</span>
+                </div>
+              </div>
+              <div fxFlex="0 1 calc(50% - 20px)">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <span class="card-container__text--bold" fxFlex="40">Total Amount Paid</span>
+                  <span fxFlex="40">S$ 1000</span>
+                </div>
+              </div>
+              <div fxFlex="0 1 calc(50% - 20px)">
+                <div fxLayout="row" fxLayoutAlign="start center">
+                  <span class="card-container__text--bold" fxFlex="40">Payment mode</span>
+                  <span fxFlex="40">Visa</span>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </iras-card-container>
+      </div>
+
+      <div fxFlex="100">
+        <div class="document">
+          <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start center">
+            <img alt="icon image" class="card__icon" src="./../../../assets/icons/mtm.svg" />
+            <div fxLayout="column" fxLayoutGap="10px">
+              <h3>Stamp Certificate</h3>
+              <span>Download and attach stamp certificate to your document.</span>
+              <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <iras-custom-button
+                  aria-label="Download"
+                  buttonText="Download"
+                  fill="solid"
+                  shape="round"
+                  color="secondary"
+                ></iras-custom-button>
+              </div>
+            </div>
+          </div>
+          <p>
+            A copy of the stamp certificate is also made available in myTax Portal for each liable individuals in this
+            transaction.
+          </p>
+        </div>
+      </div>
+
+      <div fxFlex="100">
+        <div fxLayout="row" fxLayoutGap="20px">
+          <iras-link aria-label="Link" class="button-menu__iras-link" [templateContentRef]="linkRef1">
+            <ng-template #linkRef1>
+              <span class="link__text">
+                <img alt="icon image" class="link__icon" src="./../../../assets/icons/print.svg" /> Print
+              </span>
+            </ng-template>
+          </iras-link>
+          <iras-link aria-label="Link" class="button-menu__iras-link" [templateContentRef]="linkRef2">
+            <ng-template #linkRef2>
+              <span class="link__text">
+                <img alt="icon image" class="link__icon" src="./../../../assets/icons/success.svg" /> Rate this service
+              </span>
+            </ng-template>
+          </iras-link>
+        </div>
+      </div>
+
+      <div fxFlex="100">
+        <related-services></related-services>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+        <iras-custom-button
+          aria-label="Back"
+          buttonText="Back"
+          fill="outline"
+          shape="round"
+          color="secondary"
+        ></iras-custom-button>
+      </div>
+    </div>
+  </kendo-pdf-export>
+</div>

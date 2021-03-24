@@ -1,0 +1,93 @@
+@import "../../assets/styles/utilities/iras.globals";
+
+.progress__indicator__steps {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--grey);
+  display: block;
+  border-radius: 50%;
+  line-height: 0px;
+  background: var(--grey-tint);
+  color: var(--grey);
+  text-align: center;
+  font-weight: bold;
+  box-sizing: border-box;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.progress__indicator__steps:first-child {
+  margin-left: 0;
+}
+.progress__indicator__steps:last-child {
+  margin-right: 0;
+}
+
+.container_rwd .progress__indicator__steps {
+  margin-left: 0;
+}
+
+.progress__indicator__active .progress__indicator__steps {
+  border-color: var(--primary);
+  border-width: 3px;
+  background: var(--light);
+  color: var(--light);
+  box-sizing: border-box;
+}
+
+.progress__indicator__completed .progress__indicator__steps {
+  content: url("/assets/icons/checked.svg");
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--light);
+  padding: 1px;
+  box-sizing: border-box;
+}
+
+.progress__indicator__completed .progress__indicator__stack .stack__line,
+.progress__indicator__stack.progress__indicator__stack__completed .stack__line {
+  animation: lineAnimation 400ms ease-in 0ms 1 forwards;
+  height: 2px;
+  border: 0;
+  padding: 0;
+  background: var(--primary);
+}
+
+.progress__indicator__title {
+  color: var(--grey);
+  word-break: break-word;
+}
+.progress__indicator__active .progress__indicator__title {
+  font-weight: 650;
+  color: var(--primary);
+  word-break: break-word;
+}
+
+.iras-tooltip__icon-info {
+  width: 100%;
+}
+
+.container_rwd {
+  width: 200px;
+}
+
+.iras-rwd-stepper-icon {
+  content: url("/assets/icons/info.svg");
+}
+.iras-rwd-stepper-close-icon {
+  min-width: 20px;
+  border: none;
+  background-color: white;
+  content: url("/assets/icons/close_blue.svg");
+}
+
+.iras-rwd-stepper-close-icon:hover {
+  cursor: pointer;
+  content: url("/assets/icons/close_blue_active.svg");
+}
+
+.stepper-modal-content {
+  padding: 20px;
+  max-width: 576px;
+}

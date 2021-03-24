@@ -1,0 +1,71 @@
+<div fxLayout="column" fxLayoutGap="20px" fxFlex="50">
+  <h2>Post Submit Error</h2>
+  <h2>Single Error</h2>
+  <div>
+    <iras-form-input-error
+      aria-label="Form Input Error"
+      isPostSubmitError="true"
+      errorDescription="Please complete or correct the highlighted field(s) below."
+      [templateContentRef]="singleError"
+    >
+      <ng-template #singleError> </ng-template>
+    </iras-form-input-error>
+  </div>
+
+  <div>
+    <h2>Multiple Errors</h2>
+    <iras-form-input-error
+      aria-label="Form Input Error"
+      isPostSubmitError="true"
+      [errorDescription]="['Invalid form type and duplicate transaction ID.', 'Claim for remission is under review.']"
+    >
+    </iras-form-input-error>
+  </div>
+
+  <div>
+    <h2>Multiple Errors With Title</h2>
+    <iras-form-input-error
+      aria-label="Form Input Error"
+      isPostSubmitError="true"
+      [title]="'Submission Errors'"
+      [errorDescription]="['Invalid form type and duplicate transaction ID.', 'Claim for remission is under review.']"
+    >
+    </iras-form-input-error>
+  </div>
+
+  <div>
+    <h2>Form Inline Errors</h2>
+    <form [formGroup]="singleInputForm" fxLayout="row wrap">
+      <!-- Sample Iras Input Component -->
+      <iras-input
+        aria-label="Payment Amount"
+        fxFlex="40"
+        formControlName="paymentRef"
+        label="Payment Amount"
+        placeholder="10.20"
+        type="custom"
+        pattern="^\s*((\d+(\.\d{0,2})?)|((\d*(\.\d{1,2}))))\s*$"
+        [hasError]="paymentRef.invalid && (paymentRef.dirty || paymentRef.touched)"
+        showRequiredSymbol="true"
+      ></iras-input>
+      <!-- Form Inline Error for the above Input component -->
+      <iras-form-input-error
+        aria-label="Form Input Error"
+        fxFlex="100"
+        [templateContentRef]="inputError"
+        *ngIf="paymentRef.invalid && (paymentRef.dirty || paymentRef.touched)"
+      >
+        <ng-template #inputError>
+          <div class="form-input__error">
+            <div *ngIf="paymentRef.errors.required">
+              This is a required field.
+            </div>
+            <div *ngIf="paymentRef.errors.minlength || paymentRef.errors.pattern">
+              Name must be at least 4 characters long and the number needs to contains only 2 decimal places.
+            </div>
+          </div>
+        </ng-template>
+      </iras-form-input-error>
+    </form>
+  </div>
+</div>

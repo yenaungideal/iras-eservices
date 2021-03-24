@@ -1,0 +1,11 @@
+<h2>Pagination</h2>
+<div fxLayout="row">
+  <div fxFlex="50" fxFlex.xs="100">
+    <iras-pagination
+      aria-label="Pagination"
+      [totalPages]="100"
+      [visiblePages]="3"
+      (stateChanged)="updateActivePage($event)"
+    ></iras-pagination>
+  </div>
+</div>

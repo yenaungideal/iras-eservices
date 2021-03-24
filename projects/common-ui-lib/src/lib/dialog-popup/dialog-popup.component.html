@@ -1,0 +1,52 @@
+<ng-template #dialogContentRef>
+  <div class="iras-dialog" fxFlexLayout="column">
+    <span class="iras-dialog__close-icon" (click)="onBack('ClosedIcon Clicked')"></span>
+    <div class="iras-dialog-header">
+      <span *ngIf="showTitleIcon" class="iras-dialog-image"></span>
+      <span>{{ title }}</span>
+    </div>
+    <span class="iras-dialog__description1">{{ description1 }}</span>
+    <span class="iras-dialog__description2">{{ description2 }}</span>
+    <div *ngIf="showFileUploadConflictPanel">
+      <div>
+        <span class="iras-dialog-document-image"></span>
+        <span class="iras-dialog-filename">{{ currentDuplicateFileName }}</span>
+      </div>
+      <iras-radio-button (change)="onRadioChecked($event)" [options]="uploadConflictRadioOptions"> </iras-radio-button>
+      <div *ngIf="!hasSingleConflict">
+        <hr />
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+          <input
+            type="checkbox"
+            class="iras-dialog-checkbox"
+            checked="replaceAllDuplicateSelected"
+            (change)="replaceAllDuplicateSelected = !replaceAllDuplicateSelected"
+          />
+          <div class="iras-dialog__checkboxtext">
+            Apply for all {{ fileUploadDuplicates.length - duplicateFileIndex }} conflicts
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxFlexLayout="row" fxLayoutAlign="center center" fxLayoutGap="30px" [style.margin-top]="'40px'">
+      <iras-custom-button
+        *ngIf="isCancelAction"
+        class="iras-dialog__cancel-button"
+        [buttonText]="cancelActionText"
+        fill="outline"
+        shape="round"
+        color="primary"
+        (buttonClicked)="onBack('ClosedButton Clicked')"
+      ></iras-custom-button>
+      <iras-custom-button
+        *ngIf="isOkAction"
+        class="iras-dialog__ok-button"
+        [buttonText]="okActionText"
+        fill="solid"
+        shape="round"
+        color="primary"
+        (buttonClicked)="onContinue('Continue Clicked')"
+      ></iras-custom-button>
+    </div>
+  </div>
+</ng-template>

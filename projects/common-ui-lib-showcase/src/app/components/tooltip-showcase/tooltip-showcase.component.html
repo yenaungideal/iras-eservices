@@ -1,0 +1,62 @@
+<div fxLayout="column" fxLayoutGap="40px">
+  <iras-tooltip
+    aria-label="Tooltip"
+    tooltipLabelType="info"
+    tooltipLabelText="Testing"
+    [showCloseButton]="false"
+    position="after"
+    [tooltipContentText]="'Testing 1 2 3'"
+  >
+  </iras-tooltip>
+
+  <iras-tooltip
+    aria-label="Tooltip"
+    [templateLabelRef]="tooltipRef2"
+    tooltipLabelType="custom"
+    [showCloseButton]="false"
+    position="above"
+    tooltipContentText="Copied"
+  >
+    <ng-template #tooltipRef2>
+      <img src="../../../assets/icons/copy.svg" alt="Copy" />
+    </ng-template>
+  </iras-tooltip>
+
+  <iras-tooltip
+    aria-label="Tooltip"
+    position="below"
+    tooltipContentTitle="Title here"
+    tooltipContentText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit."
+  >
+  </iras-tooltip>
+
+  <iras-tooltip
+    aria-label="Tooltip"
+    tooltipLabelType="help"
+    tooltipLabelText="Some help text"
+    position="before"
+    tooltipContentTitle="Title here"
+    tooltipContentText="Lorem ipsum dolor."
+  >
+  </iras-tooltip>
+
+  <iras-tooltip
+    aria-label="Tooltip"
+    tooltipLabelType="help"
+    tooltipLabelText="Some help text with link"
+    position="before"
+    tooltipContentTitle="Title here"
+    tooltipContentText="Lorem ipsum dolor.  <a href='https://www.iras.gov.sg/' target='_blank'>Click here to visit IRAS website</a>"
+  >
+  </iras-tooltip>
+
+  <iras-input
+    aria-label="File Ref No"
+    class="custom-btn"
+    label="File Ref No"
+    placeholder="e.g. A123/C456-78"
+    type="number"
+    tooltipText="It is <b>optional</b> to include a File Reference Number during the stamping process, which you used to trace
+        the document in your company."
+  ></iras-input>
+</div>

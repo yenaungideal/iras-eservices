@@ -1,0 +1,36 @@
+@import "../../assets/styles/utilities/iras.globals";
+
+.error-panel {
+  text-align: center;
+  width: 100%;
+}
+
+.error-header-title {
+  font-size: $size-24;
+  font-weight: lighter;
+  padding-top: 20px;
+}
+
+.error-description {
+  font-size: $size-16;
+}
+
+.error-action {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.error-timestamp {
+  padding: 20px 0;
+  font-size: $size-16;
+  color: $color-light-gray;
+}
+
+.icon-mobile {
+  content: url("/assets/icons/icon-error-mobile.png");
+}
+
+.icon-desktop {
+  content: url("/assets/icons/icon-error-desktop.png");
+}

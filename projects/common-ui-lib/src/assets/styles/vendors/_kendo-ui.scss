@@ -1,0 +1,262 @@
+@import "../utilities/iras.globals.scss";
+
+.k-checkbox {
+  width: $size-18;
+  height: $size-18;
+}
+
+.k-in:hover {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.k-checkbox:checked:hover,
+.k-checkbox:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.k-state-focused,
+.k-state-selected,
+.k-check-all ::selection,
+.k-block ::selection,
+.k-panel ::selection,
+.k-widget ::selection,
+.k-checkbox ::selection {
+  background-color: transparent;
+  border-color: transparent !important;
+  color: var(--grey) !important;
+  box-shadow: none !important;
+}
+
+.k-checkbox:indeterminate,
+.k-checkbox.k-state-indeterminate {
+  color: transparent;
+  border-color: transparent;
+}
+
+.k-block ::selection,
+.k-panel ::selection,
+.k-widget ::selection {
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+// Tool tip customization
+.tool-tip-icon {
+  font-size: $size-20;
+  color: var(--primary);
+}
+
+.k-tooltip {
+  background-color: var(--primary);
+}
+
+// Text form customization
+.k-form-field span {
+  font-weight: $font-weight-semi-bold;
+  font-style: normal;
+  font-size: $size-16;
+  color: var(--dark);
+}
+
+.required_star {
+  color: var(--danger) !important;
+}
+
+// Dropdowns
+.k-dropdown {
+  width: 100%;
+}
+
+.k-dropdown .k-dropdown-wrap,
+.k-dropdowntree .k-dropdown-wrap {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: var(--dark);
+  background-color: var(--light) !important;
+  background-image: none !important;
+}
+
+.k-form-field .k-icon {
+  color: var(--primary);
+}
+
+.k-i-arrow-s {
+  color: var(--primary);
+}
+
+.k-dropdown .k-dropdown-wrap .k-input {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.k-state-focused {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+  border-right-color: rgba(0, 0, 0, 0.08) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  border-left-color: rgba(0, 0, 0, 0.08) !important;
+  color: #656565 !important;
+  box-shadow: none !important;
+}
+
+// Tabs
+.k-tabstrip > .k-tabstrip-items > .k-state-active {
+  padding-left: 22px;
+  outline: none;
+  background-image: url("/assets/icons/tabs_checked.png");
+  background-repeat: no-repeat;
+  background-position: 10px 50%;
+  background-size: 16px;
+  background-color: var(--primary);
+  color: var(--light);
+  font-size: $size-16;
+  font-weight: $font-weight-semi-bold;
+  width: auto;
+}
+.k-tabstrip-items .k-state-default {
+  width: auto;
+  border: 1px solid #c3c3c3;
+  padding-left: 22px;
+}
+
+.k-tabstrip-items .k-item.k-state-active:hover {
+  color: var(--light);
+}
+
+.k-tabstrip-items .k-item {
+  color: var(--dark);
+  font-size: $size-16;
+}
+
+.k-tabstrip-items .k-item:hover {
+  color: var(--dark);
+}
+
+// .k-tabstrip-top > .k-tabstrip-items .k-item {
+//   border: 1px solid #c3c3c3;
+//   border-radius: 4px;
+//   width: 150px;
+// }
+
+// Dialog popups
+.k-dialog {
+  background: inherit;
+  background-color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(48, 132, 198, 1);
+  border-radius: 5px;
+}
+
+.k-window-content,
+.k-prompt-container {
+  padding: 0;
+}
+
+// Cards
+.k-card {
+  color: var(--dark);
+  font-size: $size-16;
+}
+
+// Data Grid
+.k-grid-header .k-header {
+  color: var(--dark);
+  font-size: $size-14;
+}
+
+.k-grid th,
+.k-grid td {
+  color: var(--dark);
+  font-size: $size-14;
+}
+
+.k-grid-header .k-header > .k-link {
+  color: var(--dark);
+  font-size: $size-16;
+  font-weight: $font-weight-semi-bold;
+}
+
+.k-grid td.k-state-selected,
+.k-grid tr.k-state-selected > td {
+  color: var(--dark);
+  background-color: rgba(48, 132, 198, 0.25);
+}
+
+.k-checkbox:checked:focus {
+  border-color: rgba(48, 132, 198, 1);
+  box-shadow: 0 0 0 2px rgba(48, 132, 198, 0.3);
+}
+
+.k-pager-numbers .k-link {
+  color: var(--dark);
+}
+
+.k-pager-numbers .k-link:hover {
+  color: var(--primary) !important;
+}
+
+.k-pager-numbers .k-link:focus {
+  background-color: var(--primary) !important;
+  color: var(--light) !important;
+}
+
+.k-pager-nav:hover {
+  color: var(--primary);
+}
+
+.k-pager-nav:focus {
+  color: var(--primary);
+}
+
+.k-pager-numbers .k-link .k-state-selected {
+  background-color: var(--primary) !important;
+  color: var(--light) !important;
+}
+
+.k-pager-numbers .k-link .k-state-selected:focus {
+  background-color: var(--primary) !important;
+  color: var(--light) !important;
+}
+
+//textbox
+.k-input::selection,
+.k-textarea::selection {
+  color: var(--light);
+  background-color: var(--primary);
+}
+
+//dropdown list
+.k-popup,
+.k-column-menu .k-menu:not(.k-context-menu) {
+  color: var(--grey);
+  background-color: var(--light);
+  font-family: "Source Sans Pro", Times, serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+.k-list .k-state-selected {
+  color: var(--light);
+  background-color: var(--primary);
+}
+.k-list .k-item:hover {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.k-list .k-item.k-state-selected {
+  background-color: var(--primary);
+  color: var(--light) !important;
+}
+.k-list .k-item:hover.k-state-selected {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.k-maskedtextbox.k-state-invalid .k-textbox,
+.k-maskedtextbox.ng-invalid.ng-touched .k-textbox,
+.k-maskedtextbox.ng-invalid.ng-dirty .k-textbox {
+  border-color: inherit;
+}

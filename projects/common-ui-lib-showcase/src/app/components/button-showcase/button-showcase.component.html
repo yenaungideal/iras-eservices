@@ -1,0 +1,162 @@
+<div fxLayout="column">
+  <div fxFlex="100">
+    <h2>Buttons</h2>
+  </div>
+  <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="10px">
+    <iras-custom-button
+      aria-label="Clear"
+      class="home__iras-button"
+      buttonText="Clear"
+      fill="outline"
+      shape="round"
+      color="primary"
+    >
+    </iras-custom-button>
+    <iras-custom-button
+      aria-label="Mark As Read"
+      class="home__iras-button"
+      cssClass="iras-btn"
+      buttonText="Mark As Read"
+      fill="solid"
+      shape="round"
+      color="secondary"
+    ></iras-custom-button>
+    <iras-custom-button
+      aria-label="Mark As Read"
+      class="home__iras-button"
+      cssClass="iras-btn"
+      buttonText="Mark As Read"
+      fill="outline"
+      shape="round"
+      color="secondary"
+    ></iras-custom-button>
+
+    <iras-custom-button
+      aria-label="Delete"
+      class="home__iras-button"
+      buttonText="Delete"
+      fill="solid"
+      shape="round"
+      color="danger"
+    >
+    </iras-custom-button>
+
+    <iras-custom-button
+      aria-label="Send Message"
+      class="home__iras-button"
+      cssClass="iras-btn"
+      buttonText="Send message"
+      fill="solid"
+      shape="round"
+      color="warning"
+      [disabled]="false"
+    ></iras-custom-button>
+    <iras-custom-button
+      aria-label="Submit to iras"
+      class="home__iras-button"
+      cssClass="iras-btn"
+      buttonText="submit to iras"
+      fill="solid"
+      shape="round"
+      color="secondary"
+      [disabled]="true"
+    ></iras-custom-button>
+    <iras-custom-button
+      aria-label="Download"
+      class="down-disabled-button"
+      cssClass="iras-btn"
+      buttonText="download"
+      fill="solid"
+      shape="round"
+      color="primary"
+      [disabled]="true"
+    ></iras-custom-button>
+    <iras-custom-button
+      aria-label="Discard"
+      class="home__iras-button"
+      cssClass="iras-btn"
+      buttonText="discard"
+      fill="solid"
+      shape="round"
+      color="grey"
+    ></iras-custom-button>
+    <iras-custom-button
+      aria-label="Done"
+      class="home__iras-button"
+      cssClass="iras-btn"
+      buttonText="done"
+      fill="outline"
+      shape="round"
+      color="grey"
+    ></iras-custom-button>
+  </div>
+  <div fxLayout="row wrap" [style.margin-top]="'20px'">
+    <form [formGroup]="inputForm" (ngSubmit)="onInputFormSubmit()">
+      <iras-input
+        aria-label="File Ref"
+        formControlName="fullName"
+        label="File Ref No. (if applicable)"
+        placeholder="e.g. A123/C456-78"
+        showRequiredSymbol="true"
+        tooltipText="It is <b>optional</b> to include a File Reference Number during the stamping process, which you used to trace
+          the document in your company."
+      ></iras-input>
+      <div>
+        Valid: {{ fullName.valid }}<br />
+        Value: {{ fullName.value }}<br />
+        Touched: {{ fullName.touched }}<br />
+        Dirty: {{ fullName.dirty }}<br />
+        has_Error_Required_Error: {{ fullName?.errors?.required }}<br />
+      </div>
+      <iras-custom-button
+        aria-label="Submit"
+        buttonType="submit"
+        fill="outline"
+        shape="round"
+        color="grey"
+        buttonText="Submit"
+      >
+      </iras-custom-button>
+    </form>
+  </div>
+  <h3>Button - Call-to-Action (CTA)</h3>
+  <div fxLayout="row wrap">
+    <div>
+      <iras-custom-button
+        aria-label="Retrieve"
+        class="home__iras-button"
+        buttonText="RETRIEVE"
+        fill="solid"
+        shape="round"
+        color="primary"
+        [showSpinner]="showSpinner"
+        (buttonClicked)="onSpinnerButtonClick()"
+      ></iras-custom-button>
+    </div>
+  </div>
+
+  <h3>Custom Buttons</h3>
+  <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="10px" [style.margin-top]="'20px'">
+    <iras-custom-button
+      aria-label="Search"
+      class="home__button-with-custom-padding"
+      buttonText="Search"
+      fill="solid"
+      shape="custom"
+      color="primary"
+    ></iras-custom-button>
+  </div>
+  <h3>Icon Buttons</h3>
+  <div fxFlex="100" fxLayout="row wrap" fxLayoutGap="10px" [style.margin-top]="'20px'">
+    <iras-icon-button
+      aria-label="Compose New"
+      (buttonClicked)="onButtonClick()"
+      buttonText="COMPOSE NEW"
+      fill="solid"
+      shape="round"
+      color="primary"
+      icon="add-capsule-white-svg"
+      icon="add-capsule-white"
+    ></iras-icon-button>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.close-button {
+  position: inherit;
+  top: 0;
+  right: 0;
+  padding: 9px;
+  line-height: 3px;
+  min-width: auto;
+  height: 40px;
+  width: 30px;
+  border: none;
+  background-color: white;
+  content: url("/assets/icons/close_blue.svg");
+}
+
+.mat-dialog-title {
+  height: 15px;
+}
+
+.closeBottomButton {
+  margin-right: 10px;
+}
+
+.mat-dialog-container {
+  overflow: none;
+}
+
+.mat-dialog-actions {
+  width: 0.1px;
+}

@@ -1,0 +1,92 @@
+@import "../../../assets/icons/icons.scss";
+
+:host {
+  --color: var(--dark);
+  --border-radius: 4px;
+  --height: 36px;
+  --padding: 5px;
+  --border-color: var(--grey-tint);
+  --background: var(--light);
+}
+
+.iras-select__selector {
+  border-radius: var(--border-radius);
+  position: relative;
+  border: 1px solid var(--border-color);
+  color: var(--color);
+  padding: var(--padding);
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  height: var(--height);
+  background: var(--background);
+}
+
+.iras-select__item-placeholder {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.iras-select__selected-option-text {
+  color: var(--dark);
+}
+
+.iras-select__arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid;
+  margin: 0 5px 0 10px;
+}
+
+mat-select.mat-select {
+  height: 0;
+}
+
+.iras-select__wrapper .mat-select-arrow {
+  display: none;
+}
+
+.iras-select__selector--disabled {
+  background-color: var(--grey-light);
+
+  .iras-select__item-placeholder,
+  .iras-select__selected-option-text,
+  .iras-select__arrow {
+    color: var(--grey);
+  }
+}
+
+.iras-select__selector .iras-select__arrow {
+  border-top: 7px solid;
+  color: var(--primary);
+}
+
+.iras-select__selector--has-error {
+  border: 2px solid var(--danger);
+}
+.iras-select__selector--has-error .iras-select__arrow {
+  color: var(--danger);
+}
+
+.iras-select__selector.iras-select--opened .iras-select__arrow {
+  border-top: none;
+  border-bottom: 7px solid;
+}
+
+.iras-select__selector.iras-select--focused {
+  border: 2px solid var(--primary);
+}
+
+.mat-select-value-text {
+  color: var(--dark);
+}
+
+.iras-select__label {
+  font-weight: 650;
+}
+
+.input__required-symbol {
+  color: var(--danger);
+}

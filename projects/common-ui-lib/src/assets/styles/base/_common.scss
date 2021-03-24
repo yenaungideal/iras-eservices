@@ -1,0 +1,89 @@
+@import "./../mixins/app.mixin";
+@import "./../utilities/variables";
+:root {
+  font-family: "Source Sans Pro", sans-serif;
+  @include font-size(16);
+
+  color: var(--dark);
+}
+body {
+  @include text-inherit();
+}
+
+h1 {
+  @include font-size(30);
+
+  font-weight: $font-weight-light;
+}
+
+h2 {
+  @include font-size(24);
+
+  font-weight: $font-weight-semi-bold;
+}
+
+h3 {
+  @include font-size(24);
+
+  font-weight: $font-weight-regular;
+}
+
+h4 {
+  @include font-size(20);
+
+  font-weight: $font-weight-semi-bold;
+}
+
+h5 {
+  @include font-size(18);
+
+  font-weight: $font-weight-semi-bold;
+}
+
+h6 {
+  @include font-size(18);
+
+  font-weight: $font-weight-regular;
+}
+
+.default-link {
+  @include font-size(16);
+
+  font-weight: $font-weight-regular;
+  color: var(--primary);
+  cursor: pointer;
+  text-decoration: underline;
+  text-transform: uppercase;
+
+  &:hover {
+    color: var(--primary-shade);
+    text-decoration: none;
+  }
+}
+
+.default-error-text {
+  @include font-size(16);
+
+  font-weight: $font-weight-regular;
+  color: var(--danger);
+}
+
+.attention-text {
+  @include font-size(16);
+
+  font-weight: $font-weight-regular;
+  color: var(--danger-shade);
+}
+
+//Modal Dialog Customization
+.cdk-overlay-backdrop.default-modal-dialog-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 30%;
+  background: $color-black;
+}
+
+.cdk-overlay-pane.iras-modal.default-modal {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--primary);
+  border-radius: 5px;
+}

@@ -1,0 +1,42 @@
+.link {
+  &__icon {
+    width: 18px;
+  }
+  &__text {
+    font-weight: 650;
+    text-transform: uppercase;
+  }
+}
+
+.card-container {
+  &__text--bold {
+    font-weight: 650;
+  }
+}
+
+.document {
+  padding: 10px;
+  background-color: var(--success-contrast);
+}
+
+iras-card-container.card-container {
+  --background: var(--color-multi-tulip);
+}
+
+// PDF Export support
+kendo-pdf-export {
+  font-family: "Source Sans Pro", Times, serif;
+}
+
+.print-icon {
+  width: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.print-icon-text {
+  font-size: 16px;
+  color: var(--primary);
+  text-transform: uppercase;
+  cursor: pointer;
+}

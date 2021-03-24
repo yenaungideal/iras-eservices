@@ -1,0 +1,27 @@
+<div fxFlex="100">
+  <div [formGroup]="dateRangeForm">
+    <div fxLayout="row" fxFlex="100" fxLayoutAlign="start center">
+      <iras-date-picker
+        class="start-picker"
+        [required]="required"
+        formControlName="startDate"
+        [placeholder]="startDatePlaceholder"
+        (focusout)="onTouch()"
+        [minDate]="minDate"
+        [maxDate]="dateRangeForm.controls?.endDate?.value || maxDate"
+        [hasError]="hasErrorInStartDate"
+      ></iras-date-picker>
+      <span class="to-text" fxLayoutAlign="center center">to</span>
+      <iras-date-picker
+        class="end-picker"
+        [required]="required"
+        formControlName="endDate"
+        [placeholder]="endDatePlaceholder"
+        (focusout)="onTouch()"
+        [minDate]="dateRangeForm.controls?.startDate?.value || minDate"
+        [maxDate]="maxDate"
+        [hasError]="hasErrorInEndDate"
+      ></iras-date-picker>
+    </div>
+  </div>
+</div>

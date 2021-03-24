@@ -1,0 +1,93 @@
+<h2>Dialog Popups</h2>
+<div fxLayout="row wrap" fxLayoutGap="10px">
+  <iras-custom-button
+    aria-label="Open Dialog Popup 1"
+    class="home__iras-button"
+    buttonText="Open Dialog Popup 1"
+    (buttonClicked)="dialog1Opened = true"
+    fill="solid"
+    shape="round"
+    color="primary"
+  ></iras-custom-button>
+  <iras-custom-button
+    aria-label="Open Dialog Popup 2"
+    class="home__iras-button"
+    buttonText="Open Dialog Popup 2"
+    (buttonClicked)="dialog2Opened = true"
+    fill="solid"
+    shape="round"
+    color="primary"
+  ></iras-custom-button>
+  <iras-custom-button
+    aria-label="Open Dialog Popup 3"
+    class="home__iras-button"
+    buttonText="Open Dialog Popup 3"
+    (buttonClicked)="dialog3Opened = true"
+    fill="solid"
+    shape="round"
+    color="primary"
+  ></iras-custom-button>
+  <iras-custom-button
+    aria-label="Open Dialog Popup 4"
+    class="home__iras-button"
+    buttonText="Open Dialog Popup 4"
+    (buttonClicked)="dialog4Opened = true"
+    fill="solid"
+    shape="round"
+    color="primary"
+  ></iras-custom-button>
+  <iras-dialog-popup
+    aria-label="Dialog Popup 1"
+    class="custom-dialog-popup"
+    [title]="'Not Eligible for Remission'"
+    [description1]="'Invalid Transferee details. Hence no remission is granted.'"
+    [description2]="
+      'You may continue the transaction as per normal transfer with payable duty where it deems appropriate.'
+    "
+    [dialogOpen]="dialog1Opened"
+    [cancelActionText]="'Back'"
+    (dialogClose)="onDialogClosed($event,'dialog1Opened')"
+    (dialogContinue)="onDialogContinue($event, 'dialog1Opened')"
+  >
+  </iras-dialog-popup>
+  <iras-dialog-popup
+    aria-label="Dialog Popup 2"
+    width="600px"
+    height="320px"
+    [title]="'Conflict of Intent of Purchase/ Transfer'"
+    [description1]="
+      'The transferee profile is deviated from the initial intent of Purchase/ Transfer. Hence no remission is granted.'
+    "
+    [description2]="
+      'You may continue the transaction as per normal transfer with payable duty where it deems appropriate.'
+    "
+    [cancelActionText]="'Close'"
+    [isOkAction]="false"
+    [dialogOpen]="dialog2Opened"
+    (dialogClose)="onDialogClosed($event,'dialog2Opened')"
+  >
+  </iras-dialog-popup>
+  <iras-dialog-popup
+    aria-label="Dialog Popup 3"
+    [title]="'Remove Property/ Land'"
+    [description1]="'Are you sure you want to remove this entry? It cannot be undone.'"
+    [cancelActionText]="'No'"
+    [okActionText]="'Yes'"
+    [okActionStyle]="'btn btn-primary-invert'"
+    [dialogOpen]="dialog3Opened"
+    (dialogClose)="onDialogClosed($event,'dialog3Opened')"
+    (dialogContinue)="onDialogContinue($event, 'dialog3Opened')"
+  >
+  </iras-dialog-popup>
+  <iras-dialog-popup
+    aria-label="Dialog Popup 4"
+    [title]="'No Record Found'"
+    [description1]="'Please refine your search result.'"
+    [isOkAction]="false"
+    [cancelActionText]="'Close'"
+    [dialogOpen]="dialog4Opened"
+    (dialogClose)="onDialogClosed($event,'dialog4Opened')"
+    (dialogContinue)="onDialogContinue($event, 'dialog4Opened')"
+  >
+  </iras-dialog-popup>
+</div>

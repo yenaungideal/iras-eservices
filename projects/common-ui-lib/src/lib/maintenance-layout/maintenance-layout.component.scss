@@ -1,0 +1,97 @@
+@import "../../assets/styles/utilities/iras.globals";
+@import "../../assets/styles/base";
+:host {
+  --padding: 20px;
+  --border-radius: 5px;
+  --border: 1px solid var(--color-extra-grey);
+  --border-left: 1px solid var(--color-extra-grey);
+  --background: var(--light);
+  --box-shadow: none;
+  --hover-border-color: var(--color-extra-grey);
+  --container-height: 100%;
+  --container-width: 100%;
+  --box-sizing: border-box;
+}
+
+.iras-maintenance-layout {
+  border: var(--border);
+  height: var(--container-height);
+  width: var(--container-width);
+  display: flex;
+  flex-direction: row;
+
+  position: relative;
+}
+
+.iras-maintenance-layout-left__wrapper {
+  flex: auto;
+}
+
+.iras-maintenance-layout-center__wrapper {
+  flex: auto;
+  margin: 20px;
+}
+
+.iras-maintenance-layout-right__wrapper {
+  flex: auto;
+}
+
+.iras-maintenance-layout__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30%;
+}
+
+.iras-maintenance-layout-logo__wrapper {
+  flex: auto;
+  text-align: center;
+  .iras-maintenance-layout-logo {
+    content: url("/assets/icons/iras-logo.svg");
+    width: 104px;
+    height: 114px;
+  }
+  position: relative;
+}
+
+.iras-maintenance-layout-header__wrapper {
+  flex: auto;
+  padding: 20px 0;
+  text-align: center;
+  .iras-maintenance-layout__header {
+    font-size: 28px;
+    color: #000000;
+  }
+}
+
+.iras-maintenance-layout-description__wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .iras-maintenance-layout-left__description {
+    flex: auto;
+  }
+  .iras-maintenance-layout-center__description {
+    flex: auto;
+    max-width: 576px;
+    text-align: center;
+    .iras-maintenance-layout__description {
+      font-size: 16px;
+      color: #000000;
+    }
+  }
+
+  .iras-maintenance-layout-right__description {
+    flex: auto;
+  }
+}
+
+.iras-maintenance-layout::before {
+  background-image: url("./../../assets/icons/iras-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 20%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: "";
+}

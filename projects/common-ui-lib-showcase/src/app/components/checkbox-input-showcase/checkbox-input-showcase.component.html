@@ -1,0 +1,64 @@
+<h2>Checkboxes</h2>
+<div [formGroup]="form" fxLayout="column" fxLayoutGap="40px">
+  <div class="first-checkbox">
+    <h1>
+      Vertical Layout
+    </h1>
+    <iras-checkbox
+      aria-label="Vertical CheckBox"
+      [hasError]="checkHasError"
+      formControlName="check"
+      [options]="agreementCheckOptions"
+    >
+    </iras-checkbox>
+  </div>
+  <div class="second-checkbox">
+    <h1>Horizontal Layout</h1>
+    <iras-checkbox
+      layout="horizontal"
+      aria-label="Horizontal CheckBox"
+      [hasError]="checkHasError"
+      [options]="agreementCheckOptions"
+    >
+    </iras-checkbox>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutGap="20px">
+    <iras-custom-button
+      aria-label="Patch Value"
+      buttonText="patch value"
+      (buttonClicked)="patchValue()"
+    ></iras-custom-button>
+    <iras-custom-button
+      aria-label="Toggle Error"
+      buttonText="toggle error"
+      (buttonClicked)="toggle()"
+    ></iras-custom-button>
+    <iras-custom-button
+      aria-label="Disable"
+      buttonText="Disable"
+      (buttonClicked)="toggleDisable()"
+    ></iras-custom-button>
+
+    <iras-custom-button aria-label="Reset" buttonText="Reset" (buttonClicked)="reset()"></iras-custom-button>
+  </div>
+
+  <div>
+    valid: {{ check.valid }} <br />
+    dirty: {{ check.dirty }} <br />
+    touched: {{ check.touched }} <br />
+    required: {{ check.errors?.required }} <br />
+    value: {{ check.value | json }}
+  </div>
+
+  <div fxLayout="row" [style.margin-top]="'50px'">
+    <iras-checkbox
+      aria-label="Custom Checkbox"
+      class="custom-strong-checkbox"
+      formControlName="oneCheckbox"
+      [options]="declarationOptions"
+    ></iras-checkbox>
+    <iras-required-symbol></iras-required-symbol>
+  </div>
+  value: {{ oneCheckbox.value | json }}
+</div>

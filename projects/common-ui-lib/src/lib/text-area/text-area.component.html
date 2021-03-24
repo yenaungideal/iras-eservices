@@ -1,0 +1,16 @@
+<textarea
+  fxFlex="100"
+  [rows]="rows"
+  [cols]="cols"
+  [disabled]="disabled"
+  #inputControl="ngModel"
+  [maxlength]="maxLength"
+  [(ngModel)]="value"
+  [placeholder]="placeholder"
+  (focus)="onFocusIn($event)"
+  (focusout)="onTouch()"
+  (paste)="onPaste($event)"
+  class="input__field"
+  [class.input__field--has-error]="hasError"
+  >{{ text }}</textarea
+>

@@ -1,0 +1,21 @@
+<h3>Tabs</h3>
+<kendo-tabstrip #tabStrip (tabSelect)="onTabSelect($event)">
+  <kendo-tabstrip-tab [title]="tabTitles[0]" [selected]="true">
+    <ng-template kendoTabContent>
+      <div class="card__form-tab-content">
+        <p>A printed or handwritten agreement executed in the paper-based format.</p>
+      </div>
+    </ng-template>
+  </kendo-tabstrip-tab>
+  <kendo-tabstrip-tab [title]="tabTitles[1]">
+    <ng-template kendoTabContent>
+      <div class="card__form-tab-content">
+        <p>
+          An electronic document or communication record that together effect and conclude the transaction. The
+          electronic record includes anything sent by e‑mail, SMS or any Internet‑based messaging service is deemed an
+          electronic record.
+        </p>
+      </div>
+    </ng-template>
+  </kendo-tabstrip-tab>
+</kendo-tabstrip>

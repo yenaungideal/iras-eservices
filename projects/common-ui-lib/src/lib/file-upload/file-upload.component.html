@@ -1,0 +1,113 @@
+<div
+  class="container"
+  [ngClass]="{ Opacity: files.length === maxNoFiles }"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap="15px"
+  irasAppDragNDrop
+  (fileDropped)="onFileDropped($event)"
+>
+  <input
+    type="file"
+    #fileDropRef
+    id="fileDropRef"
+    multiple
+    (change)="fileBrowseHandler($event.target.files)"
+    [disabled]="files.length === maxNoFiles || isDuplicateFilePopupShown"
+  />
+  <div *ngIf="files.length !== maxNoFiles" class="container__dragDrop">Drag and drop files here</div>
+  <div *ngIf="files.length === maxNoFiles">
+    <strong>You have reached the limit of {{ maxNoFiles }} files per upload</strong>
+  </div>
+  <div>or</div>
+  <iras-custom-button
+    class="input"
+    buttonText="Select"
+    fill="solid"
+    shape="round"
+    color="primary"
+    [disabled]="files.length === maxNoFiles"
+  ></iras-custom-button>
+
+  <div fxLayout="column" class="container__instructions">
+    <div>
+      <span class="container__instructions__subtitle">Supported Files Types</span>
+      {{ validFileFormats.join(', ') | uppercase }}
+    </div>
+    <div><span class="container__instructions__subtitle">Maximum File Size</span> {{ maxFileSize }}.00 MB per file</div>
+    <div>
+      You can upload up to {{ maxNoFiles }} files with a total file size not exceeding {{ maxTotalFileSize }}.00 MB
+    </div>
+    <div>The file name must be in English and must not exceed {{ maxNoChar }} characters.</div>
+  </div>
+</div>
+<iras-form-input-error *ngIf="isFileUploadErrorMessageShown" [templateContentRef]="inputIrasCaseRefNoError">
+  <ng-template #inputIrasCaseRefNoError>
+    <div class="form-input__error">
+      <div class="form-input__error">
+        {{ fileUploadErrorMessage }}
+      </div>
+    </div>
+  </ng-template>
+</iras-form-input-error>
+
+<div fxLayout="column" fxLayoutGap="10px" [style.padding-top]="'10px'">
+  <div
+    fxLayout="row"
+    fxFlex="100"
+    class="uploadedFiles uploadedFiles__row--success"
+    *ngFor="let file of files; let i = index"
+  >
+    <div fxLayoutAlign="center center" fxFlex="5">
+      <span class="uploadedFiles__icon--small__attachment"></span>
+    </div>
+    <div fxFlex="90" fxLayoutAlign="start center" class="uploadedFiles__filename">
+      <iras-link
+        class="uploadedFiles__iras-link"
+        [templateContentRef]="uploadedFilePreviewRef"
+        (click)="onUploadedFilePreviewClick(i)"
+      >
+        <ng-template #uploadedFilePreviewRef>
+          <span class="uploadedFiles__link">
+            {{ file?.name }}
+          </span>
+        </ng-template>
+      </iras-link>
+      <span class="uploadedFiles__file-size"> ({{ formatBytes(file?.size) }}) </span>
+    </div>
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <span class="uploadedFiles__icon__delete" (click)="deleteFile(i, file?.size)"></span>
+    </div>
+  </div>
+  <div
+    fxLayout="row"
+    fxFlex="100"
+    class="uploadedFiles uploadedFiles__row--error"
+    *ngFor="let file of listOfSupportingFileThatHasErrors; let i = index"
+  >
+    <div fxFlex="45" fxLayoutAlign="start center" class="uploadedFiles__filename">
+      {{ file?.fileName }}
+    </div>
+    <div fxFlex="50" class="uploadedFiles__errorMessage">{{ file?.fileFormatErrorMsg }}</div>
+    <div fxFlex="5" fxLayoutAlign="center center">
+      <span class="uploadedFiles__icon__delete" (click)="deleteFileForErrorRow(i)"></span>
+    </div>
+  </div>
+</div>
+<ng-container>
+  <iras-dialog-popup
+    title="Upload"
+    width="30rem"
+    [showTitleIcon]="showErrorDialogTitleIcon"
+    [showFileUploadConflictPanel]="true"
+    [fileUploadDuplicates]="filesContainingDuplicate"
+    [description1]="'A file with the same name already exists'"
+    [cancelActionText]="'Cancel'"
+    [okActionText]="'Yes'"
+    [okActionStyle]="'btn btn-primary-invert'"
+    *ngIf="isDuplicateFilePopupShown"
+    (dialogClose)="onDuplicateFilesCancelClick()"
+    (dialogContinue)="onDuplicateFileOkClick($event)"
+  >
+  </iras-dialog-popup>
+</ng-container>

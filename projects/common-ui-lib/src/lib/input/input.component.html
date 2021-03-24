@@ -1,0 +1,48 @@
+<div class="input" fxFlex="100" fxLayout="column">
+  <div *ngIf="label || tooltipText" class="input__label" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="start center">
+    <div *ngIf="label">
+      <span>{{ label }}</span
+      ><span class="input__required-symbol" *ngIf="showRequiredSymbol">*</span>
+    </div>
+    <iras-tooltip
+      *ngIf="tooltipText"
+      [tooltipContentText]="tooltipText"
+      [minTooltipPanelWidth]="minTooltipPanelWidth"
+      [maxTooltipPanelWidth]="maxTooltipPanelWidth"
+    ></iras-tooltip>
+  </div>
+  <div fxLayout="row" class="input__container">
+    <div *ngIf="type === 'tel'" fxLayoutAlign="start center" class="input__country-code" fxFlex="15">
+      +65
+    </div>
+    <input
+      [fxFlex]="type === 'tel' ? 85 : 100"
+      [type]="type"
+      [disabled]="disabled"
+      #inputElement
+      #inputControl="ngModel"
+      [maxlength]="maxLength"
+      [minlength]="minLength"
+      [(ngModel)]="value"
+      (focusin)="onFocusIn($event)"
+      (focusout)="onFocusOut()"
+      (paste)="onPaste($event)"
+      [placeholder]="placeholder"
+      [ngModelOptions]="{ updateOn: updateOn }"
+      class="input__field"
+      [class.input__field--clearable-left]="clearable && clearablePosition === 'start'"
+      [class.input__field--clearable-right]="clearable && clearablePosition === 'end'"
+      [class.input__field--has-error]="hasError"
+      [fxFlexOrder]="clearablePosition === 'start' ? 1 : 2"
+      [ngClass]="{input__border: type === 'tel'}"
+    />
+    <span
+      class="input__close-icon"
+      (click)="onClear()"
+      *ngIf="clearable && (value + '')?.length > 0"
+      [ngClass]="
+        clearablePosition === 'start' ? 'input__close-icon--position-left' : 'input__close-icon--position-right'
+      "
+    ></span>
+  </div>
+</div>

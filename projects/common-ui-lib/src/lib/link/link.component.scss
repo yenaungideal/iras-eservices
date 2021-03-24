@@ -1,0 +1,29 @@
+:host {
+  --font-weight: 650;
+  --text-transform: uppercase;
+  --color: var(--primary);
+}
+
+.link {
+  text-transform: var(--text-transform);
+}
+.no-deco-underline {
+  cursor: default;
+  touch-action: manipulation;
+  color: var(--color);
+  font-weight: var(--font-weight);
+  text-decoration: none;
+}
+.iras-link {
+  display: inline-block;
+  touch-action: manipulation;
+  cursor: pointer;
+  color: var(--color);
+  font-weight: var(--font-weight);
+  text-decoration: underline;
+  &:hover {
+    background-color: var(--light);
+    color: var(--primary-shade);
+    text-decoration: none;
+  }
+}

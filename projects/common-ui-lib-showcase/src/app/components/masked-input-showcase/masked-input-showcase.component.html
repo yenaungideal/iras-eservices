@@ -1,0 +1,48 @@
+<div fxFlex="100">
+  <form [formGroup]="maskForm" fxFlex="40" fxLayout="column">
+    <iras-masked-input
+      aria-label="Masked Input"
+      formControlName="shares"
+      fxFlex="100"
+      [mask]="sharesMask"
+      maskPlaceholder="X"
+      placeholder="X/X"
+      class="masked-input-showcase__input"
+    >
+    </iras-masked-input>
+    <iras-masked-input
+      aria-label="Masked Input"
+      [style.margin-top]="'20px'"
+      formControlName="fin"
+      fxFlex="100"
+      [mask]="finMask"
+      maskPlaceholder="X"
+      placeholder="F1111111T"
+      [hasError]="fin.invalid && (fin.dirty || fin.touched)"
+    >
+    </iras-masked-input>
+    <iras-form-input-error
+      aria-label="Form Input Error"
+      [templateContentRef]="inputError"
+      *ngIf="fin.invalid && fin.touched"
+    >
+      <ng-template #inputError>
+        <div class="form-input__error">
+          <div *ngIf="fin.errors.required">
+            This is a required field
+          </div>
+          <div *ngIf="fin.errors.minlength">Name must be at least 9 characters long.</div>
+        </div>
+      </ng-template>
+    </iras-form-input-error>
+    <div *ngIf="fin">
+      valid: {{ fin.valid }} <br />
+      dirty: {{ fin.dirty }} <br />
+      touched: {{ fin.touched }} <br />
+      required: {{ fin.errors?.required }} <br />
+      value: {{ fin.value | json }}
+    </div>
+  </form>
+
+  <div>form value: {{ maskForm.value | json }}</div>
+</div>

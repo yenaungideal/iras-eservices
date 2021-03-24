@@ -1,0 +1,44 @@
+@import "./../mixins/iras-color.mixin";
+@mixin generate-color-elements($color, $value) {
+  $contrast: map-get($colors, light);
+  @if ($color == light) {
+    $contrast: map-get($colors, dark);
+  }
+
+  --iras-color-#{$color}: #{$value};
+  --iras-color-#{$color}-rgb: #{color-to-rgb-list($value)};
+  --iras-color-#{$color}-contrast: #{$contrast};
+  --iras-color-#{$color}-contrast-rgb: #{color-to-rgb-list($value)};
+  --iras-color-#{$color}-shade: #{get-color-shade($value)};
+  --iras-color-#{$color}-tint: #{get-color-tint($value)};
+}
+
+:root {
+  --primary: "#A75A01";
+}
+
+$colors: (
+  "chelsea-gem": var(--primary),
+  "secondary": var(--secondary),
+  "success": var(--success),
+  "warning": var(--warning),
+  "danger": var(--danger),
+  "dark": var(--dark),
+  "light": var(--light),
+  "grey": var(--grey),
+);
+
+@mixin generate-color($color-name) {
+  --base: var(--#{$color-name});
+  --base-rgb: var(--#{$color-name}-rgb);
+  --contrast: var(--#{$color-name}-contrast);
+  --contrast-rgb: var(--#{$color-name}-contrast-rgb);
+  --shade: var(--#{$color-name}-shade);
+  --tint: var(--#{$color-name}-tint);
+}
+
+@each $color, $value in $colors {
+  .iras-color-#{$color} {
+    @include generate-color($color);
+  }
+}

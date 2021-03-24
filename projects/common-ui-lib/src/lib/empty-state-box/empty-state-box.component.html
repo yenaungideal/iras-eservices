@@ -1,0 +1,14 @@
+<iras-card-container [templateContentRef]="emptyStateBoxRef">
+  <ng-template #emptyStateBoxRef>
+    <div class="empty-state-box-container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+      <div fxFlex="123px" class="empty-state-space" fxLayoutAlign.xs="center none">
+        <img fxFlex="123px" class="grey-exclamation-image" alt="Empty state warning" />
+      </div>
+      <div fxFlex fxLayout="column">
+        <div fxFlex="100" fxLayoutAlign.xs="center none" class="empty-state-space"></div>
+        <div fxFlex="100" fxLayoutAlign.xs="center none" class="empty-state-header">{{ header }}</div>
+        <div fxFlex="100" fxLayoutAlign.xs="center none" class="empty-state-description">{{ description }}</div>
+      </div>
+    </div>
+  </ng-template>
+</iras-card-container>

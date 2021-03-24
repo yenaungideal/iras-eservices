@@ -1,0 +1,71 @@
+@import "../../assets/styles/utilities/iras.globals.scss";
+:host {
+  --width: 100%;
+  --min-width: 100%;
+  --border-color: var(--grey);
+  --height: auto;
+  --letter-spacing: 10px;
+  --font-size: 16px;
+  --font-weight: 400;
+  --padding: 5px;
+  --color: var(--grey);
+  --background-color: var(--light);
+  --border-radius: 0;
+  --text-transform: none;
+  --text-transform-placeholder: none;
+}
+.masked-input {
+  width: var(--width);
+  min-width: var(--min-width);
+  max-width: var(--width);
+  border-radius: var(--border-radius);
+  // height: var(--height);
+
+  .k-textbox {
+    box-sizing: border-box;
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    padding: var(--padding);
+    color: var(--color);
+    background-color: var(--background-color);
+    // width: calc(var(--width) - 10px);
+    // height: calc(var(--height) - 14px);
+    width: var(--width);
+    height: var(--height);
+    padding-right: 0;
+    padding-left: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: "Source Sans Pro", Times, serif;
+    text-transform: var(--text-transform);
+  }
+  .k-textbox:focus {
+    outline: none;
+    border: 2px solid var(--primary);
+  }
+  .k-textbox:disabled {
+    background-color: var(--grey-light);
+  }
+  .k-state-disabled {
+    background-color: var(--grey-light);
+    border-radius: var(--border-radius);
+  }
+}
+
+.k-textbox::placeholder {
+  color: var(--grey-tint);
+  text-transform: var(--text-transform-placeholder);
+}
+
+.masked-input.masked-input--has-error .k-textbox {
+  border: 2px solid var(--danger);
+}
+
+.masked-input--has-error .k-textbox:focus {
+  border: 2px solid var(--danger);
+}
+
+.iras-masked-input--disabled {
+  background-color: var(--grey-light);
+}

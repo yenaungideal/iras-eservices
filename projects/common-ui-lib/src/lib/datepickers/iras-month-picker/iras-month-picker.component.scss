@@ -1,0 +1,47 @@
+@import "./../../../assets/icons/icons";
+:host {
+  --color: var(--primary);
+  --width: 100%;
+  --input-border-radius: 4px;
+  --input-height: 36px;
+}
+
+.mat-calendar-body-cell {
+  border: 0;
+}
+
+.iras-monthpicker {
+  position: relative;
+}
+
+.iras-monthpicker__icon {
+  content: url("/assets/icons/calendar.svg");
+  position: absolute;
+  right: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+  height: 21px;
+}
+.iras-monthpicker__masked-input {
+  --letter-spacing: 0;
+  --border-color: var(--grey-tint);
+  --border-radius: var(--input-border-radius);
+  --height: var(--input-height);
+
+  min-width: var(--min-width);
+  width: var(--width);
+}
+
+.iras-monthpicker__fake-input-container {
+  height: 0;
+  width: 100%;
+  margin-top: -5px;
+}
+
+.iras-monthpicker__input {
+  border-width: 0;
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}

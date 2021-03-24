@@ -1,0 +1,20 @@
+<div fxFlex="100" fxLayout="row wrap">
+  <h3>Button - Floating Action</h3>
+  <div fxFlex="100">
+    <iras-button-menu
+      aria-label="Button Menu"
+      [data]="['Property', 'Stocks & Shares', 'Securities', 'Land']"
+      (selectionChange)="onBtnMenuSelectionChange($event)"
+    ></iras-button-menu>
+  </div>
+
+  <div fxFlex="100" [style.margin-top]="'10px'">
+    <iras-button-menu
+      aria-label="Button Menu"
+      class="menu-button"
+      [data]="['Property']"
+      currentState="final"
+      (selectionChange)="onBtnMenuSelectionChange($event)"
+    ></iras-button-menu>
+  </div>
+</div>

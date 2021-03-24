@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="3px" viewBox="0 0 12 3" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>SVGPath</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M10.2813718,2.96353001 L1.7821281,2.96353001 C0.99979432,2.96353001 0.365587484,2.32932317 0.365587484,1.54698939 C0.365587484,0.764655609 0.99979432,0.130448773 1.7821281,0.130448773 L10.2813718,0.130448773 C11.0637056,0.130448773 11.6979124,0.764655609 11.6979124,1.54698939 C11.6979124,2.32932317 11.0637056,2.96353001 10.2813718,2.96353001 Z" id="Path" fill="#515151" fill-rule="nonzero"></path>
+    </g>
+</svg>

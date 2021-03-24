@@ -1,0 +1,98 @@
+@import "../../../assets/icons/icons.scss";
+:host {
+  --color: var(--dark);
+  --border-radius: 4px;
+  --height: 40px;
+  --margin-top: 5px;
+  --border-color: var(--grey-tint);
+  --background: var(--light);
+}
+
+.iras-autocomplete__input-container {
+  border-radius: var(--border-radius);
+  position: relative;
+  border: 1px solid var(--border-color);
+  color: var(--color);
+  margin-top: var(--margin-top);
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  height: var(--height);
+  background: var(--background);
+}
+
+.iras-autocomplete__item-placeholder {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: var(--height);
+  border: 0;
+  padding-left: 10px;
+  font-family: "Source Sans Pro", Times, serif;
+  font-size: 16px;
+  color: var(--dark);
+}
+
+.iras-autocomplete__item-placeholder:focus {
+  outline: none;
+}
+
+.iras-autocomplete__item-placeholder:disabled {
+  background-color: var(--grey-light);
+}
+
+.iras-select__selected-option-text {
+  color: var(--dark);
+}
+
+.iras-search-icon {
+  height: 20px;
+  width: 20px;
+}
+
+.iras-autocomplete__input-container--focus {
+  border: 2px solid var(--primary);
+}
+
+.iras-autocomplete__item-placeholder--disabled {
+  background-color: var(--grey-light);
+
+  .iras-autocomplete__item-placeholder,
+  .iras-select__selected-option-text,
+  .iras-select__arrow {
+    color: var(--grey);
+  }
+}
+
+.iras-select__selector .iras-select__arrow {
+  border-top: 7px solid;
+  color: var(--primary);
+}
+
+.iras-autocomplete__input-container--has-error {
+  border: 2px solid var(--danger);
+}
+.iras-autocomplete__input-container--has-error .iras-select__arrow {
+  color: var(--danger);
+}
+
+.iras-autocomplete__input-container.iras-select--opened .iras-select__arrow {
+  border-top: none;
+  border-bottom: 7px solid;
+}
+
+.iras-autocomplete__input-container.iras-select--opened {
+  border: 2px solid var(--primary);
+}
+
+.mat-select-value-text {
+  color: var(--dark);
+}
+
+.iras-select__label {
+  font-weight: 600;
+}
+
+.input__required-symbol {
+  color: var(--danger);
+}

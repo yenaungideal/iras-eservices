@@ -1,0 +1,17 @@
+@import "../../../../../common-ui-lib/src/assets/styles/utilities/iras.globals.scss";
+
+.spinner-container {
+  background: red;
+}
+
+.spinner-container__spinner {
+  --color: var(--secondary);
+}
+
+.spinner-container__text {
+  color: var(--secondary);
+}
+
+.heading {
+  font-weight: $font-weight-semi-bold;
+}

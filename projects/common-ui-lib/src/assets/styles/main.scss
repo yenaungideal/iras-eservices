@@ -1,0 +1,8 @@
+// Theming
+@import "./theming/index";
+@import "./base/index";
+
+// Overrides
+@import "./overrides/index";
+@import "~@progress/kendo-theme-default/dist/all.css";
+@import "./vendors/_kendo-ui";
